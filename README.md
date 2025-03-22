@@ -19,7 +19,7 @@ A web application to manage Lockheed Martin's jet inventory, including adding, u
 
 ### Steps to Run
 1. Clone the repository:
-
+https://github.com/lockheed886/lockheed-inventory-manager.git
 
 
 2. Navigate to the project folder:
