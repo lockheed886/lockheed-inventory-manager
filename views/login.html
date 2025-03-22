@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Set the character encoding for the page -->
+  <meta charset="UTF-8">
+  <!-- Make the page responsive on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Set the page title -->
+  <title>Lockheed Martin - Login</title>
+  <!-- Load Poppins font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Load the CSS file -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Background video for the page -->
+  <video autoplay muted loop class="background-video">
+    <!-- Source of the video file -->
+    <source src="/images/background-video.mp4" type="video/mp4">
+    <!-- Fallback message if the browser doesn't support video -->
+    Your browser does not support the video tag.
+  </video>
+  <!-- Main container for the login form -->
+  <div class="login-container">
+    <!-- Lockheed Martin logo -->
+    <img src="/images/logo.png" alt="Lockheed Martin Logo" class="logo">
+    <!-- Page title -->
+    <h1>Lockheed Martin Inventory</h1>
+    <!-- Login heading -->
+    <h2>Login</h2>
+    <!-- Display error message if login fails -->
+    <div id="error-message" style="color: #ff4b2b; margin-bottom: 20px; display: none;"></div>
+    <!-- Login form -->
+    <form action="/login" method="POST">
+      <!-- Email input field -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <!-- Password input field -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <!-- Submit button -->
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- JavaScript to display error message if present -->
+  <script>
+    // Check if there’s an error message in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    // Get the error message from the URL
+    const error = urlParams.get('error');
+    // If there’s an error, show it
+    if (error) {
+      document.getElementById('error-message').style.display = 'block';
+      document.getElementById('error-message').textContent = error;
+    }
+  </script>
+</body>
+</html>
